@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gform/flutter_webview_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class RootPage extends StatelessWidget {
@@ -15,7 +16,7 @@ class RootPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ElevatedButton(
-              child: Text('iframe による描画(アンケート完了後サンプルページにリダイレクト)'),
+              child: Text('iframe'),
               onPressed: () async {
                 try {
                   await launch(
@@ -26,7 +27,7 @@ class RootPage extends StatelessWidget {
                 }
               }),
           ElevatedButton(
-              child: Text('Form の URL に直接アクセス'),
+              child: Text('Url Launcher'),
               onPressed: () async {
                 try {
                   await launch(
@@ -36,6 +37,15 @@ class RootPage extends StatelessWidget {
                   print(e);
                 }
               }),
+          ElevatedButton(
+            child: Text('Flutter WebView'),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => FlutterWebViewPage(),
+              ),
+            ),
+          ),
         ],
       )),
     );
