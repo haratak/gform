@@ -15,7 +15,7 @@ class RootPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ElevatedButton(
-              child: Text('iframe による描画'),
+              child: Text('iframe による描画(アンケート完了後サンプルページにリダイレクト)'),
               onPressed: () async {
                 try {
                   await launch(
@@ -26,7 +26,7 @@ class RootPage extends StatelessWidget {
                 }
               }),
           ElevatedButton(
-              child: Text('WebView による描画'),
+              child: Text('Form の URL に直接アクセス'),
               onPressed: () async {
                 try {
                   await launch(
